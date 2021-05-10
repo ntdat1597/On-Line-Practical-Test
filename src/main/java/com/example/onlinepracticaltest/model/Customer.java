@@ -19,8 +19,7 @@ public class Customer {
     private Date created;
 
     @OneToMany(mappedBy = "customer")
-    private Set<Emi> emis()
-    {
+    private Set<Emi> emis() {
         return this.emis();
     }
 
@@ -91,3 +90,4 @@ public class Customer {
     public void setCreated(Date created) {
         this.created = created;
     }
+}

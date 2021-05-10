@@ -18,11 +18,10 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public List<Customer> getAllCustomer() {
-        try{
+        try {
             List<Customer> list = customerRepository.findAll();
             return list;
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
@@ -30,12 +29,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public boolean saveCustomer(Customer customer) {
-        try{
+        try {
             customer.setCreated(new Date());
             customerRepository.save(customer);
             return true;
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return false;
@@ -43,11 +41,10 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public boolean updateCustomer(Customer customer) {
-        try{
+        try {
             customerRepository.save(customer);
             return true;
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return false;
@@ -55,11 +52,10 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public boolean deleteCustomer(int cust_id) {
-        try{
+        try {
             customerRepository.deleteById(cust_id);
             return true;
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return false;
@@ -67,12 +63,12 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer getCustById(int cust_id) {
-        try{
+        try {
             Customer customer = customerRepository.findById(cust_id).get();
             return customer;
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
+}
